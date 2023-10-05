@@ -1,12 +1,2 @@
 #!/bin/bash
-# Check if CFILE environment variable is set
-if [ -z "$CFILE" ]; then
-	  echo "Error: CFILE environment variable is not set."
-	    exit 1
-fi
-
-# Run the preprocessor and save the result to a file named "c"
-cpp -P -o c "$CFILE"
-
-# Display the last few lines of the output
-tail c
+gcc -E $CFILE > c
