@@ -1,8 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-int _putchar(char c);
-int _isupper(int c);
+/* Prototype for the mul function */
+int mul(int a, int b);
 
 #endif /* MAIN_H */
 
