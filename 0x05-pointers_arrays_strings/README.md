@@ -1,0 +1,1 @@
+This C project is a collection of programs and functions related to pointers, arrays, and strings. It includes various code snippets and solutions to common problems involving these fundamental C concepts.
