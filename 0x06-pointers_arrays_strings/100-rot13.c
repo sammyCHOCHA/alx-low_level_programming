@@ -1,41 +1,39 @@
 #include "main.h"
+
 /**
- *  * rot13 - Encodes a string using ROT13.
- *   * @str: The string to be encoded.
- *    * Return: A pointer to the resulting string.
- *     */
-char *rot13(char *str)
+ * rot13 - Encodes a string using rot13
+ * @s: The input string to be encoded
+ *
+ * Return: Pointer to the resulting encoded string
+ */
+char *rot13(char *s)
 {
-	    int i;
-	        char letter;
-		    char upper, lower;
+    char *ptr = s;
+    char *rot13 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    char *result = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-		        for (i = 0; str[i] != '\0'; i++)
-				    {
-					            letter = str[i];
+    while (*s)
+    {
+        char *temp_rot13 = rot13;
+        char *temp_result = result;
 
-						            if ((letter >= 'a' && letter <= 'z') || (letter >= 'A' && letter <= 'Z'))
-								            {
-										                upper = (letter >= 'A' && letter <= 'Z');
-												            lower = (letter >= 'a' && letter <= 'z');
+        if ((*s >= 'A' && *s <= 'Z') || (*s >= 'a' && *s <= 'z'))
+        {
+            while (*temp_rot13)
+            {
+                if (*s == *temp_rot13)
+                {
+                    *s = *temp_result;
+                    break;
+                }
+                temp_rot13++;
+                temp_result++;
+            }
+        }
 
-													                if (upper)
-																            {
-																		                    if (letter >= 'N')
-																					                        str[i] -= 13;
-																				                    else
-																							                        str[i] += 13;
-																						                }
-															            else if (lower)
-																	                {
-																				                if (letter >= 'n')
-																							                    str[i] -= 13;
-																						                else
-																									                    str[i] += 13;
-																								            }
-																            }
-							        }
+        s++;
+    }
 
-			    return str;
+    return ptr;
 }
 

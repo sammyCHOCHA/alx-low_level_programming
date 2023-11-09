@@ -2,11 +2,19 @@
 
 int main(void)
 {
-	    int a[] = {98, 198, 298, 398, 498};
-	        int *p;
+    int n;
+    int a[5];
 
-		    p = a;
-		        printf("a[2] = %d\n", p[2]);
-			    return (0);
+    a[2] = 102;
+    /* your code goes here */
+    *(a + 2) = 98;
+    /* your code goes above this line */
+    for (n = 0; n < 5; n++)
+    {
+        printf("%d, ", a[n]);
+    }
+    printf("\n");
+
+    return (0);
 }
 
