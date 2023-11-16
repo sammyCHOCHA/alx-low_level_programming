@@ -1,0 +1,1 @@
+This project is a collection of C programs focusing on recursion and mathematical operations. It includes functions for string manipulation, factorial calculation, exponentiation, square root, and prime number determination. Each function is implemented using recursion, and the code adheres to the Betty coding style.
