@@ -1,9 +1,16 @@
-#ifndef ABS_H
-#define ABS_H
+#include "main.h"
 
-int _abs(int n) {
-    return (n < 0) ? -n : n;
+/**
+* _abs - This computes the absolute value of an integer
+* @n: this is the int to check
+* Return: shows the absolute value of int
+*/
+
+int _abs(int n)
+{
+	if (n >= 0)
+	{
+		return (n);
+	}
+	return (-n);
 }
-
-#endif /* ABS_H */
-
